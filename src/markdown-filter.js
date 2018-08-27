@@ -26,6 +26,14 @@ class MarkdownFilter {
     
     return null;
   }
+  
+  quote() {
+    const q = this.raw_string.match(regrex.q);
+    if (q !== null) return {'type': 'q', result: q};
+    
+    return null;
+    
+  }
 }
 
 module.exports = MarkdownFilter;
